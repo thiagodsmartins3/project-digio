@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DDC103A2C08436C003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC10392C08436C003C4F43 /* RestService */; };
+		8DDC103D2C08438F003C4F43 /* LogPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC103C2C08438F003C4F43 /* LogPrint */; };
+		8DDC10402C08442C003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC103F2C08442C003C4F43 /* RestService */; };
 		8DE6B1D02C06D58700E4988D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6B1CF2C06D58700E4988D /* AppDelegate.swift */; };
 		8DE6B1D22C06D58700E4988D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6B1D12C06D58700E4988D /* SceneDelegate.swift */; };
 		8DE6B1D42C06D58700E4988D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE6B1D32C06D58700E4988D /* ViewController.swift */; };
@@ -59,7 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DDC103A2C08436C003C4F43 /* RestService in Frameworks */,
 				8DE6B2012C06D61A00E4988D /* RestService in Frameworks */,
+				8DDC10402C08442C003C4F43 /* RestService in Frameworks */,
+				8DDC103D2C08438F003C4F43 /* LogPrint in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +156,9 @@
 			name = Example;
 			packageProductDependencies = (
 				8DE6B2002C06D61A00E4988D /* RestService */,
+				8DDC10392C08436C003C4F43 /* RestService */,
+				8DDC103C2C08438F003C4F43 /* LogPrint */,
+				8DDC103F2C08442C003C4F43 /* RestService */,
 			);
 			productName = Example;
 			productReference = 8DE6B1CC2C06D58700E4988D /* Example.app */;
@@ -224,7 +233,8 @@
 			);
 			mainGroup = 8DE6B1C32C06D58700E4988D;
 			packageReferences = (
-				8DE6B1FF2C06D61A00E4988D /* XCLocalSwiftPackageReference "../RestService" */,
+				8DDC103B2C08438F003C4F43 /* XCLocalSwiftPackageReference "../LogPrint" */,
+				8DDC103E2C08442C003C4F43 /* XCLocalSwiftPackageReference "../RestService" */,
 			);
 			productRefGroup = 8DE6B1CD2C06D58700E4988D /* Products */;
 			projectDirPath = "";
@@ -621,13 +631,29 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		8DE6B1FF2C06D61A00E4988D /* XCLocalSwiftPackageReference "../RestService" */ = {
+		8DDC103B2C08438F003C4F43 /* XCLocalSwiftPackageReference "../LogPrint" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../LogPrint;
+		};
+		8DDC103E2C08442C003C4F43 /* XCLocalSwiftPackageReference "../RestService" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../RestService;
 		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8DDC10392C08436C003C4F43 /* RestService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RestService;
+		};
+		8DDC103C2C08438F003C4F43 /* LogPrint */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LogPrint;
+		};
+		8DDC103F2C08442C003C4F43 /* RestService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RestService;
+		};
 		8DE6B2002C06D61A00E4988D /* RestService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RestService;

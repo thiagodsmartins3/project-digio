@@ -24,6 +24,9 @@
 		8DDC104D2C08458B003C4F43 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10472C08458B003C4F43 /* HomeModel.swift */; };
 		8DDC10532C08E835003C4F43 /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10522C08E835003C4F43 /* ProductsModel.swift */; };
 		8DDC10562C08E8A9003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC10552C08E8A9003C4F43 /* RestService */; };
+		8DDC10582C08EA30003C4F43 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10572C08EA30003C4F43 /* HomeWorker.swift */; };
+		8DDC105B2C08EC54003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC105A2C08EC54003C4F43 /* RestService */; };
+		8DDC105E2C08ED4A003C4F43 /* DigioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC105D2C08ED4A003C4F43 /* DigioService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,8 @@
 		8DDC10462C08458B003C4F43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8DDC10472C08458B003C4F43 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		8DDC10522C08E835003C4F43 /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
+		8DDC10572C08EA30003C4F43 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		8DDC105D2C08ED4A003C4F43 /* DigioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigioService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DDC105B2C08EC54003C4F43 /* RestService in Frameworks */,
 				8DDC10562C08E8A9003C4F43 /* RestService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +121,7 @@
 		8DDC10072C08402E003C4F43 /* ProjectDigio */ = {
 			isa = PBXGroup;
 			children = (
+				8DDC105C2C08ED19003C4F43 /* Service */,
 				8DDC10512C08E80D003C4F43 /* Model */,
 				8DDC10412C08457B003C4F43 /* Home */,
 				8DDC10082C08402E003C4F43 /* AppDelegate.swift */,
@@ -154,6 +161,7 @@
 				8DDC10452C08458B003C4F43 /* HomeInteractor.swift */,
 				8DDC10462C08458B003C4F43 /* HomeView.swift */,
 				8DDC10472C08458B003C4F43 /* HomeModel.swift */,
+				8DDC10572C08EA30003C4F43 /* HomeWorker.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -164,6 +172,14 @@
 				8DDC10522C08E835003C4F43 /* ProductsModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8DDC105C2C08ED19003C4F43 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC105D2C08ED4A003C4F43 /* DigioService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +200,7 @@
 			name = ProjectDigio;
 			packageProductDependencies = (
 				8DDC10552C08E8A9003C4F43 /* RestService */,
+				8DDC105A2C08EC54003C4F43 /* RestService */,
 			);
 			productName = ProjectDigio;
 			productReference = 8DDC10052C08402E003C4F43 /* ProjectDigio.app */;
@@ -258,7 +275,7 @@
 			);
 			mainGroup = 8DDC0FFC2C08402E003C4F43;
 			packageReferences = (
-				8DDC10542C08E8A9003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */,
+				8DDC10592C08EC54003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */,
 			);
 			productRefGroup = 8DDC10062C08402E003C4F43 /* Products */;
 			projectDirPath = "";
@@ -307,7 +324,9 @@
 				8DDC10532C08E835003C4F43 /* ProductsModel.swift in Sources */,
 				8DDC10092C08402E003C4F43 /* AppDelegate.swift in Sources */,
 				8DDC100B2C08402E003C4F43 /* SceneDelegate.swift in Sources */,
+				8DDC10582C08EA30003C4F43 /* HomeWorker.swift in Sources */,
 				8DDC10482C08458B003C4F43 /* HomePresenter.swift in Sources */,
+				8DDC105E2C08ED4A003C4F43 /* DigioService.swift in Sources */,
 				8DDC10492C08458B003C4F43 /* HomeRouter.swift in Sources */,
 				8DDC104A2C08458B003C4F43 /* HomeViewController.swift in Sources */,
 				8DDC104B2C08458B003C4F43 /* HomeInteractor.swift in Sources */,
@@ -661,7 +680,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		8DDC10542C08E8A9003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */ = {
+		8DDC10592C08EC54003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = LocalSPM/RestService;
 		};
@@ -669,6 +688,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		8DDC10552C08E8A9003C4F43 /* RestService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RestService;
+		};
+		8DDC105A2C08EC54003C4F43 /* RestService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RestService;
 		};

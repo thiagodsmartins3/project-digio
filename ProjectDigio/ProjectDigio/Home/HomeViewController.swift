@@ -1,7 +1,6 @@
 import UIKit
 
 protocol HomeDisplayLogic where Self: UIViewController {
-    
     func displayProductsViewModel(_ viewModel: HomeModel.ViewModel)
 }
 
@@ -21,7 +20,6 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //interactor.doSomething(item: 22)
         interactor.request(.requestProducts)
     }
     

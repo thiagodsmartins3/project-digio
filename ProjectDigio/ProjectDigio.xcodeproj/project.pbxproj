@@ -151,6 +151,7 @@
 		8DDC10412C08457B003C4F43 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8DDC10622C08F68F003C4F43 /* Cell */,
 				8DDC10422C08458B003C4F43 /* HomePresenter.swift */,
 				8DDC10432C08458B003C4F43 /* HomeRouter.swift */,
 				8DDC10442C08458B003C4F43 /* HomeViewController.swift */,
@@ -176,6 +177,13 @@
 				8DDC105D2C08ED4A003C4F43 /* DigioService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		8DDC10622C08F68F003C4F43 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

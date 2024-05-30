@@ -36,7 +36,7 @@ extension HomeInteractor: HomeBusinessLogic {
             switch result {
             case .success(let data):
                 self.requestResult(data)
-            case .failure(let error):
+            case .failure(_):
                 print("")
             }
         }

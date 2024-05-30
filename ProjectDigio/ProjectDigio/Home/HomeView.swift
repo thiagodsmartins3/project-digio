@@ -1,10 +1,15 @@
 import UIKit
+import RestService
 
 protocol HomeViewDelegate where Self: UIViewController {
     func sendDataBackToParent(_ data: Data)
 }
 
-final class HomeView: UIView, UICollectionViewDelegate {
+protocol HomeDisplay: AnyObject {
+    func displayData(_ products: ProductsModel)
+}
+
+final class HomeView: UIView {
     lazy var homeScrollview: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
@@ -27,9 +32,9 @@ final class HomeView: UIView, UICollectionViewDelegate {
         
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(ProductCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         collectionView.tag = 1
-        collectionView.backgroundColor = .blue
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -42,9 +47,9 @@ final class HomeView: UIView, UICollectionViewDelegate {
         
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(ProductCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         collectionView.tag = 2
-        collectionView.backgroundColor = .red
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -57,14 +62,22 @@ final class HomeView: UIView, UICollectionViewDelegate {
         
         let collectionView = UICollectionView(frame: .zero,
                                               collectionViewLayout: layout)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(ProductCollectionViewCell.self,
+                                forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         collectionView.tag = 3
-        collectionView.backgroundColor = .green
         collectionView.delegate = self
         collectionView.dataSource = self
         
         return collectionView
     }()
+    
+    private var products: ProductsModel? {
+        didSet {
+            spotlightCollectionView.reloadData()
+            cashCollectionView.reloadData()
+            productsCollectionView.reloadData()
+        }
+    }
     
     weak var delegate: HomeViewDelegate?
     
@@ -94,7 +107,7 @@ final class HomeView: UIView, UICollectionViewDelegate {
     private func setupContraints() {
         NSLayoutConstraint.activate([
             homeScrollview.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-            homeScrollview.leadingAnchor.constraint(equalTo: leadingAnchor),
+            homeScrollview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
             homeScrollview.bottomAnchor.constraint(equalTo: bottomAnchor),
             homeScrollview.trailingAnchor.constraint(equalTo: trailingAnchor),
             
@@ -111,16 +124,26 @@ final class HomeView: UIView, UICollectionViewDelegate {
     }
 }
 
+extension HomeView: HomeDisplay {
+    func displayData(_ products: ProductsModel) {
+        self.products = products
+    }
+}
+
 extension HomeView: UICollectionViewDataSource,
                     UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let data = products else {
+            return 0
+        }
+        
         switch collectionView.tag {
         case 1:
-            return 8
+            return data.spotlight.count
         case 2:
-            return 16
+            return 1
         case 3:
-            return 24
+            return data.products.count
         default:
             return 0
         }
@@ -130,16 +153,49 @@ extension HomeView: UICollectionViewDataSource,
         
         switch collectionView.tag {
         case 1:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-            cell.backgroundColor = .systemIndigo
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
+            
+            RestService.shared.downloadImage(products!.spotlight[indexPath.row].bannerURL) {
+                result in
+                
+                switch result {
+                case .success(let data):
+                    cell.backgroundImage.image = data
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
             return cell
         case 2:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-            cell.backgroundColor = .systemIndigo
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
+            
+            RestService.shared.downloadImage(products!.cash.bannerURL) {
+                result in
+                
+                switch result {
+                case .success(let data):
+                    cell.backgroundImage.image = data
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
             return cell
         case 3:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-            cell.backgroundColor = .systemIndigo
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as! ProductCollectionViewCell
+            
+            RestService.shared.downloadImage(products!.products[indexPath.row].imageURL) {
+                result in
+                
+                switch result {
+                case .success(let data):
+                    cell.backgroundImage.image = data
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            
             return cell
         default:
             return UICollectionViewCell()
@@ -147,6 +203,21 @@ extension HomeView: UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 500, height: 500)
+        switch collectionView.tag {
+        case 1:
+            let width = self.frame.size.width - 50
+            let height = width * 1.5
+            return CGSize(width: width, height: height)
+        case 2:
+            let width = self.frame.size.width - 50
+            let height = width * 1.5
+            return CGSize(width: width, height: height)
+        case 3:
+            let width = self.frame.size.width / 2
+            let height = width / 2
+            return CGSize(width: width, height: height)
+        default:
+            return .zero
+        }
     }
 }

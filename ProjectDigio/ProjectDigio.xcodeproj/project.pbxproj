@@ -26,6 +26,7 @@
 		8DDC105B2C08EC54003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC105A2C08EC54003C4F43 /* RestService */; };
 		8DDC105E2C08ED4A003C4F43 /* DigioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC105D2C08ED4A003C4F43 /* DigioService.swift */; };
 		8DDC10612C08F261003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC10602C08F261003C4F43 /* RestService */; };
+		8DDC10642C0906DF003C4F43 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10632C0906DF003C4F43 /* ProductCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		8DDC10522C08E835003C4F43 /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
 		8DDC10572C08EA30003C4F43 /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
 		8DDC105D2C08ED4A003C4F43 /* DigioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigioService.swift; sourceTree = "<group>"; };
+		8DDC10632C0906DF003C4F43 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 		8DDC10622C08F68F003C4F43 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				8DDC10632C0906DF003C4F43 /* ProductCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				8DDC104A2C08458B003C4F43 /* HomeViewController.swift in Sources */,
 				8DDC104B2C08458B003C4F43 /* HomeInteractor.swift in Sources */,
 				8DDC104C2C08458B003C4F43 /* HomeView.swift in Sources */,
+				8DDC10642C0906DF003C4F43 /* ProductCollectionViewCell.swift in Sources */,
 				8DDC104D2C08458B003C4F43 /* HomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

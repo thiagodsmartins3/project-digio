@@ -61,7 +61,7 @@ extension HomeViewController: HomeViewDelegate {
 // MARK: - Private Zone
 private extension HomeViewController {
     func displayProducts(_ products: ProductsModel) {
-        print(products)
+        mainView.displayData(products)
         router.routeTo(.xScene(xData: 22))
     }
 }

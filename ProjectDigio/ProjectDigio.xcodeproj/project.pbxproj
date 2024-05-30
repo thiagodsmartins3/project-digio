@@ -16,6 +16,12 @@
 		8DDC10202C084031003C4F43 /* ProjectDigioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC101F2C084031003C4F43 /* ProjectDigioTests.swift */; };
 		8DDC102A2C084031003C4F43 /* ProjectDigioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10292C084031003C4F43 /* ProjectDigioUITests.swift */; };
 		8DDC102C2C084031003C4F43 /* ProjectDigioUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC102B2C084031003C4F43 /* ProjectDigioUITestsLaunchTests.swift */; };
+		8DDC10482C08458B003C4F43 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10422C08458B003C4F43 /* HomePresenter.swift */; };
+		8DDC10492C08458B003C4F43 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10432C08458B003C4F43 /* HomeRouter.swift */; };
+		8DDC104A2C08458B003C4F43 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10442C08458B003C4F43 /* HomeViewController.swift */; };
+		8DDC104B2C08458B003C4F43 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10452C08458B003C4F43 /* HomeInteractor.swift */; };
+		8DDC104C2C08458B003C4F43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10462C08458B003C4F43 /* HomeView.swift */; };
+		8DDC104D2C08458B003C4F43 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10472C08458B003C4F43 /* HomeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		8DDC10252C084031003C4F43 /* ProjectDigioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectDigioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DDC10292C084031003C4F43 /* ProjectDigioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDigioUITests.swift; sourceTree = "<group>"; };
 		8DDC102B2C084031003C4F43 /* ProjectDigioUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDigioUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8DDC10422C08458B003C4F43 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		8DDC10432C08458B003C4F43 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		8DDC10442C08458B003C4F43 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8DDC10452C08458B003C4F43 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		8DDC10462C08458B003C4F43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8DDC10472C08458B003C4F43 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,7 @@
 		8DDC10072C08402E003C4F43 /* ProjectDigio */ = {
 			isa = PBXGroup;
 			children = (
+				8DDC10412C08457B003C4F43 /* Home */,
 				8DDC10082C08402E003C4F43 /* AppDelegate.swift */,
 				8DDC100A2C08402E003C4F43 /* SceneDelegate.swift */,
 				8DDC100C2C08402E003C4F43 /* ViewController.swift */,
@@ -125,6 +138,19 @@
 				8DDC102B2C084031003C4F43 /* ProjectDigioUITestsLaunchTests.swift */,
 			);
 			path = ProjectDigioUITests;
+			sourceTree = "<group>";
+		};
+		8DDC10412C08457B003C4F43 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC10422C08458B003C4F43 /* HomePresenter.swift */,
+				8DDC10432C08458B003C4F43 /* HomeRouter.swift */,
+				8DDC10442C08458B003C4F43 /* HomeViewController.swift */,
+				8DDC10452C08458B003C4F43 /* HomeInteractor.swift */,
+				8DDC10462C08458B003C4F43 /* HomeView.swift */,
+				8DDC10472C08458B003C4F43 /* HomeModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +287,12 @@
 				8DDC100D2C08402E003C4F43 /* ViewController.swift in Sources */,
 				8DDC10092C08402E003C4F43 /* AppDelegate.swift in Sources */,
 				8DDC100B2C08402E003C4F43 /* SceneDelegate.swift in Sources */,
+				8DDC10482C08458B003C4F43 /* HomePresenter.swift in Sources */,
+				8DDC10492C08458B003C4F43 /* HomeRouter.swift in Sources */,
+				8DDC104A2C08458B003C4F43 /* HomeViewController.swift in Sources */,
+				8DDC104B2C08458B003C4F43 /* HomeInteractor.swift in Sources */,
+				8DDC104C2C08458B003C4F43 /* HomeView.swift in Sources */,
+				8DDC104D2C08458B003C4F43 /* HomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

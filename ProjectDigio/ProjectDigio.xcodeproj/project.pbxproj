@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,8 @@
 		8DDC104B2C08458B003C4F43 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10452C08458B003C4F43 /* HomeInteractor.swift */; };
 		8DDC104C2C08458B003C4F43 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10462C08458B003C4F43 /* HomeView.swift */; };
 		8DDC104D2C08458B003C4F43 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10472C08458B003C4F43 /* HomeModel.swift */; };
+		8DDC10532C08E835003C4F43 /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10522C08E835003C4F43 /* ProductsModel.swift */; };
+		8DDC10562C08E8A9003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC10552C08E8A9003C4F43 /* RestService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		8DDC10452C08458B003C4F43 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		8DDC10462C08458B003C4F43 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8DDC10472C08458B003C4F43 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		8DDC10522C08E835003C4F43 /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DDC10562C08E8A9003C4F43 /* RestService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +115,7 @@
 		8DDC10072C08402E003C4F43 /* ProjectDigio */ = {
 			isa = PBXGroup;
 			children = (
+				8DDC10512C08E80D003C4F43 /* Model */,
 				8DDC10412C08457B003C4F43 /* Home */,
 				8DDC10082C08402E003C4F43 /* AppDelegate.swift */,
 				8DDC100A2C08402E003C4F43 /* SceneDelegate.swift */,
@@ -153,6 +158,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		8DDC10512C08E80D003C4F43 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8DDC10522C08E835003C4F43 /* ProductsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,6 +182,9 @@
 			dependencies = (
 			);
 			name = ProjectDigio;
+			packageProductDependencies = (
+				8DDC10552C08E8A9003C4F43 /* RestService */,
+			);
 			productName = ProjectDigio;
 			productReference = 8DDC10052C08402E003C4F43 /* ProjectDigio.app */;
 			productType = "com.apple.product-type.application";
@@ -241,6 +257,9 @@
 				Base,
 			);
 			mainGroup = 8DDC0FFC2C08402E003C4F43;
+			packageReferences = (
+				8DDC10542C08E8A9003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */,
+			);
 			productRefGroup = 8DDC10062C08402E003C4F43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DDC100D2C08402E003C4F43 /* ViewController.swift in Sources */,
+				8DDC10532C08E835003C4F43 /* ProductsModel.swift in Sources */,
 				8DDC10092C08402E003C4F43 /* AppDelegate.swift in Sources */,
 				8DDC100B2C08402E003C4F43 /* SceneDelegate.swift in Sources */,
 				8DDC10482C08458B003C4F43 /* HomePresenter.swift in Sources */,
@@ -639,6 +659,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		8DDC10542C08E8A9003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = LocalSPM/RestService;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DDC10552C08E8A9003C4F43 /* RestService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RestService;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DDC0FFD2C08402E003C4F43 /* Project object */;
 }

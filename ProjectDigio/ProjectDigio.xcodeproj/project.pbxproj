@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		8DDC10092C08402E003C4F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10082C08402E003C4F43 /* AppDelegate.swift */; };
 		8DDC100B2C08402E003C4F43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC100A2C08402E003C4F43 /* SceneDelegate.swift */; };
-		8DDC100D2C08402E003C4F43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC100C2C08402E003C4F43 /* ViewController.swift */; };
-		8DDC10102C08402E003C4F43 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC100F2C08402E003C4F43 /* Base */; };
 		8DDC10122C084030003C4F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC10112C084030003C4F43 /* Assets.xcassets */; };
 		8DDC10152C084030003C4F43 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8DDC10142C084030003C4F43 /* Base */; };
 		8DDC10202C084031003C4F43 /* ProjectDigioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC101F2C084031003C4F43 /* ProjectDigioTests.swift */; };
@@ -27,6 +25,7 @@
 		8DDC10582C08EA30003C4F43 /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10572C08EA30003C4F43 /* HomeWorker.swift */; };
 		8DDC105B2C08EC54003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC105A2C08EC54003C4F43 /* RestService */; };
 		8DDC105E2C08ED4A003C4F43 /* DigioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC105D2C08ED4A003C4F43 /* DigioService.swift */; };
+		8DDC10612C08F261003C4F43 /* RestService in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC10602C08F261003C4F43 /* RestService */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +49,6 @@
 		8DDC10052C08402E003C4F43 /* ProjectDigio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectDigio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DDC10082C08402E003C4F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DDC100A2C08402E003C4F43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8DDC100C2C08402E003C4F43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8DDC100F2C08402E003C4F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DDC10112C084030003C4F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DDC10142C084030003C4F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DDC10162C084030003C4F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DDC105B2C08EC54003C4F43 /* RestService in Frameworks */,
+				8DDC10612C08F261003C4F43 /* RestService in Frameworks */,
 				8DDC10562C08E8A9003C4F43 /* RestService in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,8 +124,6 @@
 				8DDC10412C08457B003C4F43 /* Home */,
 				8DDC10082C08402E003C4F43 /* AppDelegate.swift */,
 				8DDC100A2C08402E003C4F43 /* SceneDelegate.swift */,
-				8DDC100C2C08402E003C4F43 /* ViewController.swift */,
-				8DDC100E2C08402E003C4F43 /* Main.storyboard */,
 				8DDC10112C084030003C4F43 /* Assets.xcassets */,
 				8DDC10132C084030003C4F43 /* LaunchScreen.storyboard */,
 				8DDC10162C084030003C4F43 /* Info.plist */,
@@ -201,6 +197,7 @@
 			packageProductDependencies = (
 				8DDC10552C08E8A9003C4F43 /* RestService */,
 				8DDC105A2C08EC54003C4F43 /* RestService */,
+				8DDC10602C08F261003C4F43 /* RestService */,
 			);
 			productName = ProjectDigio;
 			productReference = 8DDC10052C08402E003C4F43 /* ProjectDigio.app */;
@@ -275,7 +272,7 @@
 			);
 			mainGroup = 8DDC0FFC2C08402E003C4F43;
 			packageReferences = (
-				8DDC10592C08EC54003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */,
+				8DDC105F2C08F261003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */,
 			);
 			productRefGroup = 8DDC10062C08402E003C4F43 /* Products */;
 			projectDirPath = "";
@@ -295,7 +292,6 @@
 			files = (
 				8DDC10122C084030003C4F43 /* Assets.xcassets in Resources */,
 				8DDC10152C084030003C4F43 /* Base in Resources */,
-				8DDC10102C08402E003C4F43 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +316,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DDC100D2C08402E003C4F43 /* ViewController.swift in Sources */,
 				8DDC10532C08E835003C4F43 /* ProductsModel.swift in Sources */,
 				8DDC10092C08402E003C4F43 /* AppDelegate.swift in Sources */,
 				8DDC100B2C08402E003C4F43 /* SceneDelegate.swift in Sources */,
@@ -368,14 +363,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8DDC100E2C08402E003C4F43 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8DDC100F2C08402E003C4F43 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8DDC10132C084030003C4F43 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -518,7 +505,7 @@
 				INFOPLIST_FILE = ProjectDigio/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -546,7 +533,7 @@
 				INFOPLIST_FILE = ProjectDigio/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -680,7 +667,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		8DDC10592C08EC54003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */ = {
+		8DDC105F2C08F261003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = LocalSPM/RestService;
 		};
@@ -692,6 +679,10 @@
 			productName = RestService;
 		};
 		8DDC105A2C08EC54003C4F43 /* RestService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RestService;
+		};
+		8DDC10602C08F261003C4F43 /* RestService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RestService;
 		};

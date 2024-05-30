@@ -22,6 +22,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //interactor.doSomething(item: 22)
+        interactor.request(.requestProducts)
     }
     
     override func loadView() {
@@ -37,7 +38,6 @@ final class HomeViewController: UIViewController {
 
 // MARK: - HomeDisplayLogic
 extension HomeViewController: HomeDisplayLogic {
-    
     func displayProductsViewModel(_ viewModel: HomeModel.ViewModel) {
         DispatchQueue.main.async {
             switch viewModel {
@@ -52,7 +52,6 @@ extension HomeViewController: HomeDisplayLogic {
 
 // MARK: - HomeViewDelegate
 extension HomeViewController: HomeViewDelegate {
-    
     func sendDataBackToParent(_ data: Data) {
         //usually this delegate takes care of users actions and requests through UI
         

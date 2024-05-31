@@ -22,6 +22,6 @@ O app consiste de duas telas
   No workspace é possivel fazer os testes através do Example
 
 ### OBSERVAÇÕES
-  Ao baixar o projeto caso as dependencias, os pacotes SPM, não carreguem inicialmente (isso ocorre com o SPM), basta dar um reset nos pacotes
+  Ao baixar o projeto e as dependencias, os pacotes SPM, não carreguem inicialmente (isso ocorre com o SPM), basta dar um reset nos pacotes
 
     Xcode > File > Packages > Reset Packages Cache

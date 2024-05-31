@@ -2,7 +2,7 @@ import UIKit
 import RestService
 
 protocol HomeViewDelegate where Self: UIViewController {
-    func sendDataBackToParent(_ data: Data)
+    func didSelectProduct(_ description: String, image: String)
 }
 
 protocol HomeDisplay: AnyObject {
@@ -199,6 +199,19 @@ extension HomeView: UICollectionViewDataSource,
             return cell
         default:
             return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch collectionView.tag {
+        case 1:
+            delegate?.didSelectProduct(products!.spotlight[indexPath.row].description, image: products!.spotlight[indexPath.row].bannerURL)
+        case 2:
+            delegate?.didSelectProduct(products!.cash.description, image: products!.cash.bannerURL)
+        case 3:
+            delegate?.didSelectProduct(products!.products[indexPath.row].description, image: products!.products[indexPath.row].imageURL)
+        default:
+            print("")
         }
     }
     

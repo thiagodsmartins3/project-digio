@@ -14,6 +14,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     lazy var backgroundImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(systemName: "square.and.arrow.down")
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

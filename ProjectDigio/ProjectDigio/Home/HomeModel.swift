@@ -14,8 +14,7 @@ enum HomeModel {
     }
     
     enum Route {
-        case dismissHomeScene
-        case xScene(xData: Int)
+        case productDetail(_ productDetails: String, productImage: String)
     }
     
     struct DataSource {

@@ -18,25 +18,18 @@ extension HomeRouter: HomeRouting {
     func routeTo(_ route: HomeModel.Route) {
         DispatchQueue.main.async {
             switch route {
-                
-            case .dismissHomeScene:
-                self.dismissHomeScene()
-                
-            case .xScene(let data):
-                self.showXSceneBy(data)
+            case .productDetail(let data, let image):
+                self.routeToDetails(data, image: image)
             }
         }
     }
 }
 
-
 // MARK: - Private Zone
 private extension HomeRouter {
-    func dismissHomeScene() {
-        viewController?.dismiss(animated: true)
-    }
-    
-    func showXSceneBy(_ data: Int) {
-        print("will show the next screen")
+    func routeToDetails(_ description: String, image: String) {
+        let detailsViewController = DetailsViewController(mainView: DetailsView(), dataSource: DetailsModel.DataSource(productDescription: description, productImage: image))
+        viewController?.modalPresentationStyle = .formSheet
+        viewController?.present(detailsViewController, animated: true)
     }
 }

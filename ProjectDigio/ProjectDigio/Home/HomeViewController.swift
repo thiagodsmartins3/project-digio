@@ -24,6 +24,7 @@ final class HomeViewController: UIViewController {
     }
     
     override func loadView() {
+        mainView.delegate = self
         view = mainView
     }
     
@@ -49,11 +50,9 @@ extension HomeViewController: HomeDisplayLogic {
 
 
 // MARK: - HomeViewDelegate
-extension HomeViewController: HomeViewDelegate {
-    func sendDataBackToParent(_ data: Data) {
-        //usually this delegate takes care of users actions and requests through UI
-        
-        //do something with the data or message send back from mainView
+extension HomeViewController: HomeViewDelegate {    
+    func didSelectProduct(_ description: String, image: String) {
+        router.routeTo(.productDetail(description, productImage: image))
     }
 }
 
@@ -62,6 +61,5 @@ extension HomeViewController: HomeViewDelegate {
 private extension HomeViewController {
     func displayProducts(_ products: ProductsModel) {
         mainView.displayData(products)
-        router.routeTo(.xScene(xData: 22))
     }
 }

@@ -10,6 +10,9 @@ O app consiste de duas telas
 2. Detalhes
    Fluxo chamado quando um item é selecionado na home
 
+### ARQUITETURA
+   VIP
+
 ### Dependências
   Não há nenhuma deependencia externa, as bibliotecas usados no projeto foram desenvolvidas por mim e estão disponiveis junto ao projeto
   na pasta LocalSPM. As duas bibliotecas podem ser analisadas pois junto a ela dispinbilizei o workspace para facilitar visualização delas

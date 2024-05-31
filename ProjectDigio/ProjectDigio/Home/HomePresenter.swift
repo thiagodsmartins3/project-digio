@@ -2,6 +2,7 @@ import Foundation
 
 protocol HomePresentationLogic {
     func presentResponse(_ response: HomeModel.Response)
+    func presentLoader(_ isLoading: LoaderModel.Response)
 }
 
 final class HomePresenter {
@@ -15,6 +16,13 @@ final class HomePresenter {
 
 // MARK: - HomePresentationLogic
 extension HomePresenter: HomePresentationLogic {
+    func presentLoader(_ isLoading: LoaderModel.Response) {
+        switch isLoading {
+        case .responseLoader(let loading):
+            showLoader(loading)
+        }
+    }
+
     func presentResponse(_ response: HomeModel.Response) {
         switch response {
         case .requestProductsResponse(let data):
@@ -28,5 +36,9 @@ extension HomePresenter: HomePresentationLogic {
 private extension HomePresenter {
     func presentProducts(_ products: ProductsModel) {
         viewController?.displayProductsViewModel(.displayProductsViewModel(products))
+    }
+    
+    func showLoader(_ isLoading: Bool) {
+        viewController?.displayLoader(.displayLoading(isLoading))
     }
 }

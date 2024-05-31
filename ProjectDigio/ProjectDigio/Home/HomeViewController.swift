@@ -2,6 +2,7 @@ import UIKit
 
 protocol HomeDisplayLogic where Self: UIViewController {
     func displayProductsViewModel(_ viewModel: HomeModel.ViewModel)
+    func displayLoader(_ viewModel: LoaderModel.ViewModel)
 }
 
 final class HomeViewController: UIViewController {
@@ -20,6 +21,7 @@ final class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         interactor.request(.requestProducts)
     }
     
@@ -37,10 +39,16 @@ final class HomeViewController: UIViewController {
 
 // MARK: - HomeDisplayLogic
 extension HomeViewController: HomeDisplayLogic {
+    func displayLoader(_ viewModel: LoaderModel.ViewModel) {
+        switch viewModel {
+        case .displayLoading(let loading):
+            showLoading(loading)
+        }
+    }
+
     func displayProductsViewModel(_ viewModel: HomeModel.ViewModel) {
         DispatchQueue.main.async {
             switch viewModel {
-                
             case .displayProductsViewModel(let data):
                 self.displayProducts(data)
             }
@@ -61,5 +69,9 @@ extension HomeViewController: HomeViewDelegate {
 private extension HomeViewController {
     func displayProducts(_ products: ProductsModel) {
         mainView.displayData(products)
+    }
+    
+    func showLoading(_ isLoading: Bool) {
+        mainView.displayLoading(isLoading)
     }
 }

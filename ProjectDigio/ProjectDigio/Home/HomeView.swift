@@ -10,6 +10,12 @@ protocol HomeDisplay: AnyObject {
 }
 
 final class HomeView: UIView {
+    enum Constants {
+        static let spacing = 24.0
+        static let height = 200.0
+        static let topSpacing = 100.0
+    }
+    
     lazy var homeScrollview: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = true
@@ -79,6 +85,33 @@ final class HomeView: UIView {
         }
     }
     
+    var loadingActivityIndicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView()
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        indicator.style = .large
+        indicator.color = .blue
+        indicator.backgroundColor = .white
+            
+        indicator.autoresizingMask = [
+            .flexibleLeftMargin, .flexibleRightMargin,
+            .flexibleTopMargin, .flexibleBottomMargin
+        ]
+        
+        return indicator
+    }()
+    
+    var blurEffectView: UIVisualEffectView = {
+        let blurEffect = UIBlurEffect(style: .dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.alpha = 0.8
+        blurEffectView.autoresizingMask = [
+            .flexibleWidth, .flexibleHeight
+        ]
+        
+        return blurEffectView
+    }()
+    
     weak var delegate: HomeViewDelegate?
     
     override init(frame: CGRect) {
@@ -98,6 +131,7 @@ final class HomeView: UIView {
         homeStackView.addArrangedSubview(productsCollectionView)
         
         homeScrollview.addSubview(homeStackView)
+        homeScrollview.addSubview(loadingActivityIndicator)
         
         addSubview(homeScrollview)
         
@@ -106,8 +140,8 @@ final class HomeView: UIView {
     
     private func setupContraints() {
         NSLayoutConstraint.activate([
-            homeScrollview.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-            homeScrollview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
+            homeScrollview.topAnchor.constraint(equalTo: topAnchor, constant: Constants.topSpacing),
+            homeScrollview.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.spacing),
             homeScrollview.bottomAnchor.constraint(equalTo: bottomAnchor),
             homeScrollview.trailingAnchor.constraint(equalTo: trailingAnchor),
             
@@ -117,16 +151,35 @@ final class HomeView: UIView {
             homeStackView.trailingAnchor.constraint(equalTo: homeScrollview.trailingAnchor),
             homeStackView.widthAnchor.constraint(equalTo: homeScrollview.widthAnchor),
             
-            spotlightCollectionView.heightAnchor.constraint(equalToConstant: 200),
-            cashCollectionView.heightAnchor.constraint(equalToConstant: 200),
-            productsCollectionView.heightAnchor.constraint(equalToConstant: 200)
+            spotlightCollectionView.heightAnchor.constraint(equalToConstant: Constants.height),
+            cashCollectionView.heightAnchor.constraint(equalToConstant: Constants.height),
+            productsCollectionView.heightAnchor.constraint(equalToConstant: Constants.height),
+            
+            loadingActivityIndicator.topAnchor.constraint(equalTo: homeScrollview.topAnchor),
+            loadingActivityIndicator.leadingAnchor.constraint(equalTo: homeScrollview.leadingAnchor),
+            loadingActivityIndicator.bottomAnchor.constraint(equalTo: homeScrollview.bottomAnchor),
+            loadingActivityIndicator.trailingAnchor.constraint(equalTo: homeScrollview.trailingAnchor)
         ])
+    }
+    
+    private func showLoader(_ isLoading: Bool) {
+        if isLoading {
+            loadingActivityIndicator.startAnimating()
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                self.loadingActivityIndicator.removeFromSuperview()
+            }
+        }
     }
 }
 
 extension HomeView: HomeDisplay {
     func displayData(_ products: ProductsModel) {
         self.products = products
+    }
+    
+    func displayLoading(_ isLoading: Bool) {
+        showLoader(isLoading)
     }
 }
 

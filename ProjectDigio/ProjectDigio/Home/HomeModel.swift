@@ -16,8 +16,22 @@ enum HomeModel {
     enum Route {
         case productDetail(_ productDetails: String, productImage: String)
     }
-    
+        
     struct DataSource {
         //var test: Int
+    }
+}
+
+enum LoaderModel {
+    enum Request {
+        case requestLoader(_ isLoading: Bool)
+    }
+    
+    enum Response {
+        case responseLoader(_ isLoading: Bool)
+    }
+    
+    enum ViewModel {
+        case displayLoading(_ isLoading: Bool)
     }
 }

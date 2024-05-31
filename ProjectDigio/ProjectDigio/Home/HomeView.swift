@@ -274,7 +274,7 @@ extension HomeView: UICollectionViewDataSource,
                 case .success(let data):
                     cell.backgroundImage.image = data
                 case .failure(let error):
-                    print(error)
+                    cell.backgroundImage.image = UIImage(named: "loadfailed")
                 }
             }
             
@@ -288,8 +288,8 @@ extension HomeView: UICollectionViewDataSource,
                 switch result {
                 case .success(let data):
                     cell.backgroundImage.image = data
-                case .failure(let error):
-                    print(error)
+                case .failure(_):
+                    cell.backgroundImage.image = UIImage(named: "loadfailed")
                 }
             }
             
@@ -303,8 +303,8 @@ extension HomeView: UICollectionViewDataSource,
                 switch result {
                 case .success(let data):
                     cell.backgroundImage.image = data
-                case .failure(let error):
-                    print(error)
+                case .failure(_):
+                    cell.backgroundImage.image = UIImage(named: "loadfailed")
                 }
             }
             

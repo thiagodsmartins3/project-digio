@@ -13,12 +13,10 @@
 import UIKit
 
 protocol DetailsRouting {
-    
     func routeTo(_ route: DetailsModel.Route)
 }
 
 final class DetailsRouter {
-    
     private weak var viewController: UIViewController?
     
     init(viewController: UIViewController?) {
@@ -29,17 +27,9 @@ final class DetailsRouter {
 
 // MARK: - DetailsRouting
 extension DetailsRouter: DetailsRouting {
-    
     func routeTo(_ route: DetailsModel.Route) {
         DispatchQueue.main.async {
-            switch route {
-                
-            case .dismissDetailsScene:
-                self.dismissDetailsScene()
-                
-            case .xScene(let data):
-                self.showXSceneBy(data)
-            }
+
         }
     }
 }
@@ -48,11 +38,4 @@ extension DetailsRouter: DetailsRouting {
 // MARK: - Private Zone
 private extension DetailsRouter {
     
-    func dismissDetailsScene() {
-        viewController?.dismiss(animated: true)
-    }
-    
-    func showXSceneBy(_ data: Int) {
-        print("will show the next screen")
-    }
 }

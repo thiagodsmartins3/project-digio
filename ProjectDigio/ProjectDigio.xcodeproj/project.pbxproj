@@ -33,6 +33,10 @@
 		8DDC10742C0977BC003C4F43 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC106E2C0977BC003C4F43 /* DetailsInteractor.swift */; };
 		8DDC10752C0977BC003C4F43 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC106F2C0977BC003C4F43 /* DetailsView.swift */; };
 		8DDC10762C0977BC003C4F43 /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10702C0977BC003C4F43 /* DetailsModel.swift */; };
+		8DDC107A2C0A56C4003C4F43 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC10792C0A56C4003C4F43 /* HomeViewControllerTests.swift */; };
+		8DDC107C2C0A5BB0003C4F43 /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC107B2C0A5BB0003C4F43 /* HomeInteractorTests.swift */; };
+		8DDC107E2C0A5E30003C4F43 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DDC107D2C0A5E30003C4F43 /* HomePresenterTests.swift */; };
+		8DDC10812C0A5FD7003C4F43 /* LogPrint in Frameworks */ = {isa = PBXBuildFile; productRef = 8DDC10802C0A5FD7003C4F43 /* LogPrint */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,9 @@
 		8DDC106E2C0977BC003C4F43 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
 		8DDC106F2C0977BC003C4F43 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		8DDC10702C0977BC003C4F43 /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
+		8DDC10792C0A56C4003C4F43 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		8DDC107B2C0A5BB0003C4F43 /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		8DDC107D2C0A5E30003C4F43 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +97,7 @@
 				8DDC105B2C08EC54003C4F43 /* RestService in Frameworks */,
 				8DDC10612C08F261003C4F43 /* RestService in Frameworks */,
 				8DDC10562C08E8A9003C4F43 /* RestService in Frameworks */,
+				8DDC10812C0A5FD7003C4F43 /* LogPrint in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				8DDC101F2C084031003C4F43 /* ProjectDigioTests.swift */,
+				8DDC10792C0A56C4003C4F43 /* HomeViewControllerTests.swift */,
+				8DDC107B2C0A5BB0003C4F43 /* HomeInteractorTests.swift */,
+				8DDC107D2C0A5E30003C4F43 /* HomePresenterTests.swift */,
 			);
 			path = ProjectDigioTests;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				8DDC10552C08E8A9003C4F43 /* RestService */,
 				8DDC105A2C08EC54003C4F43 /* RestService */,
 				8DDC10602C08F261003C4F43 /* RestService */,
+				8DDC10802C0A5FD7003C4F43 /* LogPrint */,
 			);
 			productName = ProjectDigio;
 			productReference = 8DDC10052C08402E003C4F43 /* ProjectDigio.app */;
@@ -310,6 +322,7 @@
 			mainGroup = 8DDC0FFC2C08402E003C4F43;
 			packageReferences = (
 				8DDC105F2C08F261003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/RestService" */,
+				8DDC107F2C0A5FD7003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/LogPrint" */,
 			);
 			productRefGroup = 8DDC10062C08402E003C4F43 /* Products */;
 			projectDirPath = "";
@@ -378,7 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DDC107C2C0A5BB0003C4F43 /* HomeInteractorTests.swift in Sources */,
 				8DDC10202C084031003C4F43 /* ProjectDigioTests.swift in Sources */,
+				8DDC107A2C0A56C4003C4F43 /* HomeViewControllerTests.swift in Sources */,
+				8DDC107E2C0A5E30003C4F43 /* HomePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,6 +731,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = LocalSPM/RestService;
 		};
+		8DDC107F2C0A5FD7003C4F43 /* XCLocalSwiftPackageReference "LocalSPM/LogPrint" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = LocalSPM/LogPrint;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -729,6 +749,10 @@
 		8DDC10602C08F261003C4F43 /* RestService */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = RestService;
+		};
+		8DDC10802C0A5FD7003C4F43 /* LogPrint */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LogPrint;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

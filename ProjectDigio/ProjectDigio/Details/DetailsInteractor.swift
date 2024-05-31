@@ -31,7 +31,6 @@ final class DetailsInteractor: DetailsDataStore {
     init(viewController: DetailsDisplayLogic?, dataSource: DetailsModel.DataSource) {
         self.dataSource = dataSource
         self.presenter = DetailsPresenter(viewController: viewController)
-        print(self.dataSource)
     }
 }
 

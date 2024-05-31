@@ -10,6 +10,11 @@ protocol DisplayProducts: AnyObject {
 }
 
 final class DetailsView: UIView {
+    enum NumberConstants {
+        static let verticalSpacing = 100.0
+        static let horizontalSpacing = 24.0
+    }
+    
     lazy var productImageView: UIImageView = {
         let imageView = UIImageView(image: UIImage(systemName: "square.and.arrow.down"))
         imageView.contentMode = .scaleAspectFit
@@ -21,7 +26,6 @@ final class DetailsView: UIView {
     lazy var productDetailLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.text = "Testando"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -49,14 +53,14 @@ final class DetailsView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            productImageView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-            productImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            productImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24),
+            productImageView.topAnchor.constraint(equalTo: topAnchor, constant: NumberConstants.verticalSpacing),
+            productImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: NumberConstants.horizontalSpacing),
+            productImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -NumberConstants.horizontalSpacing),
             productImageView.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 0.2),
             
             productDetailLabel.topAnchor.constraint(equalTo: productImageView.bottomAnchor, constant: 10),
-            productDetailLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24),
-            productDetailLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24)
+            productDetailLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: NumberConstants.horizontalSpacing),
+            productDetailLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -NumberConstants.horizontalSpacing)
         ])
     }
 }
@@ -70,7 +74,7 @@ extension DetailsView: DisplayProducts {
             case .success(let data):
                 self.productImageView.image = data
             case .failure(_):
-                print("")
+                self.productImageView.image = UIImage(named: "loadfailed")
             }
         }
         

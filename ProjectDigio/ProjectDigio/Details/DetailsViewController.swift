@@ -5,7 +5,6 @@ protocol DetailsDisplayLogic where Self: UIViewController {
 }
 
 final class DetailsViewController: UIViewController {
-    
     private let mainView: DetailsView
     private var interactor: DetailsInteractable!
     private var router: DetailsRouting!

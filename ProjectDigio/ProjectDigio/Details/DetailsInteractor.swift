@@ -11,7 +11,6 @@ protocol DetailsDataStore {
 }
 
 final class DetailsInteractor: DetailsDataStore {
-    
     var dataSource: DetailsModel.DataSource
     
     private var presenter: DetailsPresentationLogic
@@ -29,7 +28,8 @@ extension DetailsInteractor: DetailsBusinessLogic {
         DispatchQueue.global(qos: .userInitiated).async {
             switch request {
             case .productDetails:
-                self.presentDetails(self.dataSource.productDescription, image: self.dataSource.productImage)
+                self.presentDetails(self.dataSource.productDescription, 
+                                    image: self.dataSource.productImage)
             }
         }
     }

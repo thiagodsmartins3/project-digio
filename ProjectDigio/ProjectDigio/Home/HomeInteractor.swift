@@ -47,7 +47,8 @@ extension HomeInteractor: HomeBusinessLogic {
                 self.requestResult(data)
                 self.showLoader(.requestLoader(false))
             case .failure(_):
-                print("")
+                self.showLoader(.requestLoader(false))
+                self.errorResult()
             }
         }
     }
@@ -62,5 +63,9 @@ private extension HomeInteractor {
     
     func showLoading(_ isLoading: Bool) {
         presenter.presentLoader(.responseLoader(isLoading))
+    }
+    
+    func errorResult() {
+        presenter.presentError()
     }
 }

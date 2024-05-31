@@ -3,6 +3,7 @@ import UIKit
 protocol HomeDisplayLogic where Self: UIViewController {
     func displayProductsViewModel(_ viewModel: HomeModel.ViewModel)
     func displayLoader(_ viewModel: LoaderModel.ViewModel)
+    func displayError()
 }
 
 final class HomeViewController: UIViewController {
@@ -39,6 +40,10 @@ final class HomeViewController: UIViewController {
 
 // MARK: - HomeDisplayLogic
 extension HomeViewController: HomeDisplayLogic {
+    func displayError() {
+        showError()
+    }
+    
     func displayLoader(_ viewModel: LoaderModel.ViewModel) {
         switch viewModel {
         case .displayLoading(let loading):
@@ -73,5 +78,9 @@ private extension HomeViewController {
     
     func showLoading(_ isLoading: Bool) {
         mainView.displayLoading(isLoading)
+    }
+    
+    func showError() {
+        mainView.displayError()
     }
 }

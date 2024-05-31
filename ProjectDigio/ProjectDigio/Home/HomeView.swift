@@ -21,6 +21,7 @@ final class HomeView: UIView {
     enum TextConstants {
         static let cashTitle = "digio Cash"
         static let productsTitle = "Produtos"
+        static let errorMessage = "Ocorreu um erro no carremento dos dados. Tente novamente"
     }
     
     lazy var homeScrollview: UIScrollView = {
@@ -125,7 +126,24 @@ final class HomeView: UIView {
         
         return indicator
     }()
+    
+    lazy var errorView: UIView = {
+        let view = UIView()
+        view.isHidden = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var errorLabel: UILabel = {
+        let label = UILabel()
+        label.text = TextConstants.errorMessage
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         
+        return label
+    }()
+    
     weak var delegate: HomeViewDelegate?
     
     override init(frame: CGRect) {
@@ -149,7 +167,10 @@ final class HomeView: UIView {
         homeScrollview.addSubview(homeStackView)
         homeScrollview.addSubview(loadingActivityIndicator)
         
+        errorView.addSubview(errorLabel)
+        
         addSubview(homeScrollview)
+        addSubview(errorView)
         
         setupContraints()
     }
@@ -176,6 +197,17 @@ final class HomeView: UIView {
             loadingActivityIndicator.bottomAnchor.constraint(equalTo: homeScrollview.bottomAnchor),
             loadingActivityIndicator.trailingAnchor.constraint(equalTo: homeScrollview.trailingAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            errorView.topAnchor.constraint(equalTo: topAnchor),
+            errorView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            errorView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            errorView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            errorLabel.centerXAnchor.constraint(equalTo: errorView.centerXAnchor),
+            errorLabel.centerYAnchor.constraint(equalTo: errorView.centerYAnchor),
+            errorLabel.widthAnchor.constraint(equalTo: errorView.widthAnchor, multiplier: 0.5),
+        ])
     }
     
     private func showLoader(_ isLoading: Bool) {
@@ -187,6 +219,13 @@ final class HomeView: UIView {
             }
         }
     }
+    
+    private func showError() {
+        DispatchQueue.main.async {
+            self.errorView.isHidden = false
+            self.homeScrollview.isHidden = true
+        }
+    }
 }
 
 extension HomeView: HomeDisplay {
@@ -196,6 +235,10 @@ extension HomeView: HomeDisplay {
     
     func displayLoading(_ isLoading: Bool) {
         showLoader(isLoading)
+    }
+    
+    func displayError() {
+        showError()
     }
 }
 

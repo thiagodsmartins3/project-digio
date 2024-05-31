@@ -3,6 +3,7 @@ import Foundation
 protocol HomePresentationLogic {
     func presentResponse(_ response: HomeModel.Response)
     func presentLoader(_ isLoading: LoaderModel.Response)
+    func presentError()
 }
 
 final class HomePresenter {
@@ -16,6 +17,10 @@ final class HomePresenter {
 
 // MARK: - HomePresentationLogic
 extension HomePresenter: HomePresentationLogic {
+    func presentError() {
+        showError()
+    }
+    
     func presentLoader(_ isLoading: LoaderModel.Response) {
         switch isLoading {
         case .responseLoader(let loading):
@@ -40,5 +45,9 @@ private extension HomePresenter {
     
     func showLoader(_ isLoading: Bool) {
         viewController?.displayLoader(.displayLoading(isLoading))
+    }
+    
+    func showError() {
+        viewController?.displayError()
     }
 }
